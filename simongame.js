@@ -13,11 +13,11 @@ let on = false; //If programme has been turned on (start turned off)
 let win; 
 
 //#css selector for all html-elements we interact with
-const turnCounter = document.querySelector("#turn"); 
+const turnCounter = document.querySelector("#turn");
 const topLeft = document.querySelector("#topleft");
 const topRight = document.querySelector("#topright");
-const bottomLeft = document.querySelector("#bottomLeft");
-const bottomRight = document.querySelector("#bottomRight");
+const bottomLeft = document.querySelector("#bottomleft");
+const bottomRight = document.querySelector("#bottomright");
 const strictButton = document.querySelector("#strict");
 const onButton = document.querySelector("#on");
 const startButton = document.querySelector("#start");
@@ -28,7 +28,7 @@ strictButton.addEventListener('click', (event) => {
     } else {
         strict = false;
     }
-})
+});
 
 onButton.addEventListener('click', (event) => {
     if (onButton.checked == true) {
@@ -40,13 +40,13 @@ onButton.addEventListener('click', (event) => {
         clearColor();
         clearInterval(intervalId); //If power is turned off it will clear interval
     }
-})
+});
 
 startButton.addEventListener('click', (event) =>{
 if(on || win) {
     play();
 }
-})
+});
 
 function play() { 
     //Resetting variables (If the game has been played before)
@@ -73,25 +73,24 @@ function play() {
 
   function gameTurn(){
     on = false; // When on is false, the player cant click the colors
-
     if (flash == turn) {
         clearInterval(intervalId);
         compTurn = false;
         clearColor();
-        on = true; //the player can hit the colors
-    }
+        on = true; //The player can hit the colors 
+      }
 
-    if (compTurn){
+    if (compTurn) {
         clearColor();
         setTimeout(() => {
-            if(order[flash] ==1) one(); //ORder is array, flash is no of time we flashed a color (starts at 0)
+            if(order[flash] == 1) one(); //ORder is array, flash is no of time we flashed a color (starts at 0)
                                         // if the first item in array is 1, it will run the one(); function
-            if(order[flash] ==2) two();
-            if(order[flash] ==3) three();
-            if(order[flash] ==4) four();
+            if(order[flash] == 2) two();
+            if(order[flash] == 3) three();
+            if(order[flash] == 4) four();
             flash++;    //Incremented, starts a 0 and goes up one every time computer flashes
                         //Happens after 200 milliseconds
-        }, 200) //Waits 200 milliseconds and then perfom whats inside the arrowfunction of timeout
+        }, 200); //Waits 200 milliseconds and then perfom whats inside the arrowfunction of timeout
     }
   }
 
@@ -129,6 +128,13 @@ function play() {
     }
     noise = true;
     bottomRight.style.backgroundColor = "lightskyblue";
+  }
+
+  function clearColor() {
+    topLeft.style.backgroundColor = "darkgreen";
+    topRight.style.backgroundColor = "darkred";
+    bottomLeft.style.backgroundColor = "goldenrod";
+    bottomRight.style.backgroundColor = "darkblue";
   }
   
 
