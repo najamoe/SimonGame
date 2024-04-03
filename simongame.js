@@ -37,8 +37,39 @@ onButton.addEventListener('click', (event) => {
     } else {
         on = false;
         turnCounter.innerHTML = "";
+        clearColor();
+        clearInterval(intervalId);
     }
 })
+
+startButton.addEventListener('click', (event) =>{
+if(on || win) {
+    play();
+}
+})
+
+function play() { 
+    //Resetting variables (If the game has been played before)
+    win = false;
+    order = [];
+    playerOrder = [];
+    flash = 0;
+    intervalId = 0;
+    turn = 1;
+    turnCounter.innerHTML = 1;
+    good = true;
+    for (var i = 0; i < 20; i++) {  
+                                    //The board has 4 quadrants, loop fills up with random series of 
+                                    //numbers to indicate the order they are gonna light up in the game
+      order.push(Math.floor(Math.random() * 4) + 1);
+    }
+    compTurn = true;
+  
+    intervalId = setInterval(gameTurn, 800);
+  }
+  
+
+
 
 
 

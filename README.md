@@ -23,4 +23,6 @@ If STRICT mode is not enabled, you will see a "NO" in the count display, and the
 
 **Game Objective:** The goal is to see how long you can keep accurately repeating the sequence as it grows longer with each round. Test the limits of your memory and challenge yourself to achieve higher scores!
 
+**WINNER**: You win the game by completing 20 rounds
+
 The game is based on a boardgame created af Ralph H. Baer og Howard J. Morrison in 1978. 
