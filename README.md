@@ -1,7 +1,7 @@
 # SimonGame
 
 
-A fun memory game where players have to remember a growing sequence og blinking lights that the game produces. 
+A fun memory game where players have to remember a growing sequence of blinking lights that the game produces. 
 Its time a player accuratly repeats the sequence, a new color is added to the sequence, making it harder as each round is completer. 
 The goal is to see, how long a sequence the player can remember correctly. 
 
