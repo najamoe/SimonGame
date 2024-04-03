@@ -13,6 +13,10 @@ The goal is to see, how long a sequence the player can remember correctly.
 
 **Repeating the Sequence:** When the "GO" button lights up, it's your turn to repeat the sequence. Press the colors in the same order you saw them.
 
+**Strict mode:** If you want to increase difficulty, enable STRICT, this will end the game if you make an error 
+If STRICT mode is not enabled, you will see a "NO" in the count display, and the sequence will run again, giving you another try
+
+
 **Advancing Difficulty:** If you accurately repeat the sequence, the game will add another color to the sequence, making it longer and more challenging.
 
 **Continuing the Game:** The "GO" button will light up again, signaling you to repeat the extended sequence. Keep repeating and adding colors as you succeed.
