@@ -148,7 +148,7 @@ body {
   
   #inner-circle {
     position: absolute;
-    background: grey;
+    background: rgb(255, 253, 253);
     border-radius: 50%;
     height: 250px;
     width: 250px;
