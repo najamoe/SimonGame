@@ -38,7 +38,7 @@ onButton.addEventListener('click', (event) => {
         on = false;
         turnCounter.innerHTML = "";
         clearColor();
-        clearInterval(intervalId);
+        clearInterval(intervalId); //If power is turned off it will clear interval
     }
 })
 
@@ -65,7 +65,70 @@ function play() {
     }
     compTurn = true;
   
-    intervalId = setInterval(gameTurn, 800);
+    intervalId = setInterval(gameTurn, 800);    //run gameturn function every 800 milliseconds, makes the computer
+                                                //flashes a light every 800 milliseconds
+                                                //keeps repeating until intervalId is cleared
+                                                //It will clear after all lights have flashed
+  }
+
+  function gameTurn(){
+    on = false; // When on is false, the player cant click the colors
+
+    if (flash == turn) {
+        clearInterval(intervalId);
+        compTurn = false;
+        clearColor();
+        on = true; //the player can hit the colors
+    }
+
+    if (compTurn){
+        clearColor();
+        setTimeout(() => {
+            if(order[flash] ==1) one(); //ORder is array, flash is no of time we flashed a color (starts at 0)
+                                        // if the first item in array is 1, it will run the one(); function
+            if(order[flash] ==2) two();
+            if(order[flash] ==3) three();
+            if(order[flash] ==4) four();
+            flash++;    //Incremented, starts a 0 and goes up one every time computer flashes
+                        //Happens after 200 milliseconds
+        }, 200) //Waits 200 milliseconds and then perfom whats inside the arrowfunction of timeout
+    }
+  }
+
+  function one() {
+    if (noise) {
+      let audio = document.getElementById("clip1");
+      audio.play();
+    }
+    noise = true;
+    topLeft.style.backgroundColor = "lightgreen";
+  }
+  
+  function two() {
+    if (noise) {
+      let audio = document.getElementById("clip2");
+      audio.play();
+    }
+    noise = true;
+    topRight.style.backgroundColor = "tomato";
+  }
+  
+  function three() {
+    if (noise) {
+      let audio = document.getElementById("clip3");
+      audio.play();
+    }
+    noise = true;
+    bottomLeft.style.backgroundColor = "yellow";
+  }
+  
+  function four() {
+    if (noise) {
+      let audio = document.getElementById("clip4");
+      audio.play();
+    }
+    noise = true;
+    bottomRight.style.backgroundColor = "lightskyblue";
   }
   
 
