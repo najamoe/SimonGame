@@ -1,5 +1,5 @@
 # SimonGame
-<div id="SimonGame" align:"center>
+<div id="SimonGame" style="text-align:center">
     <img src="https://github.com/najamoe/SimonGame/assets/113134845/c4478473-db2c-4aab-9107-8c25461cd336" width="400">
 </div>
 
