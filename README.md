@@ -1,8 +1,7 @@
 # SimonGame
-<div id="SimonGame" style="display: flex; justify-content: center;">
-    <img src="https://github.com/najamoe/SimonGame/assets/113134845/c4478473-db2c-4aab-9107-8c25461cd336" width="400">
+<div style="display: flex; justify-content: center; align-items: center; height: 300px;">
+    <img src="https://github.com/najamoe/SimonGame/assets/113134845/c4478473-db2c-4aab-9107-8c25461cd336" width="200">
 </div>
-
 
 
 A fun memory game where players have to remember a growing sequence of blinking lights that the game produces. 
