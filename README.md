@@ -3,6 +3,8 @@
     <img src="https://github.com/najamoe/SimonGame/assets/113134845/c4478473-db2c-4aab-9107-8c25461cd336" width="400">
 </div>
 
+# Visit the Simon Game [here](https://najamoe.github.io/SimonGame/) for a live demo.
+
 
 A fun memory game where players have to remember a growing sequence of blinking lights that the game produces. 
 Its time a player accuratly repeats the sequence, a new color is added to the sequence, making it harder as each round is completer. 
