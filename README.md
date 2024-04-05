@@ -1,5 +1,5 @@
 # SimonGame
-<div style="display: flex; justify-content: center; align-items: center; height: 300px;">
+<div id="SimonGame">
     <img src="https://github.com/najamoe/SimonGame/assets/113134845/c4478473-db2c-4aab-9107-8c25461cd336" width="200">
 </div>
 
