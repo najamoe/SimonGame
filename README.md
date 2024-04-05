@@ -1,6 +1,6 @@
 # SimonGame
-<div id="SimonGame">
-    <img src="https://github.com/najamoe/SimonGame/assets/113134845/c4478473-db2c-4aab-9107-8c25461cd336" width="200">
+<div id="SimonGame" align:"center>
+    <img src="https://github.com/najamoe/SimonGame/assets/113134845/c4478473-db2c-4aab-9107-8c25461cd336" width="400">
 </div>
 
 
