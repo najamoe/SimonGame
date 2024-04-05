@@ -59,7 +59,7 @@ function play() {
     turnCounter.innerHTML = 1;
     good = true;
     for (var i = 0; i < 20; i++) {  
-                                    //The board has 4 quadrants, loop fills up with random series of 
+                                    //The board has 4 quadrants, loop fills order[]; up with random series of 
                                     //numbers to indicate the order they are gonna light up in the game
       order.push(Math.floor(Math.random() * 4) + 1);
     }
@@ -137,7 +137,113 @@ function play() {
     bottomRight.style.backgroundColor = "darkblue";
   }
   
+  function flashColor() {
+    topLeft.style.backgroundColor = "lightgreen";
+    topRight.style.backgroundColor = "tomato";
+    bottomLeft.style.backgroundColor = "yellow";
+    bottomRight.style.backgroundColor = "lightskyblue";
+  }
 
+  
+  topLeft.addEventListener('click', (event) => { // Event listener for clicking on the top left quadrant
+    if (on) { // If the game is turned on
+      playerOrder.push(1); // Add 1 to the playerOrder array to record the player's choice
+      check(); // Check if the player's choice is correct
+      one(); // Light up the top left quadrant
+      if(!win) { // If the player hasn't won
+        setTimeout(() => { // Wait 300 milliseconds before executing the next action
+          clearColor(); // Clear all flashing lights
+        }, 300); // Wait 300 milliseconds before executing the next action
+      }
+    }
+  })
+
+topRight.addEventListener('click', (event) => {
+  if (on) {
+    playerOrder.push(2);
+    check();
+    two();
+    if(!win) {
+      setTimeout(() => {
+        clearColor();
+      }, 300);
+    }
+  }
+})
+
+bottomLeft.addEventListener('click', (event) => {
+  if (on) {
+    playerOrder.push(3);
+    check();
+    three();
+    if(!win) {
+      setTimeout(() => {
+        clearColor();
+      }, 300);
+    }
+  }
+})
+
+bottomRight.addEventListener('click', (event) => {
+  if (on) {
+    playerOrder.push(4);
+    check();
+    four();
+    if(!win) {
+      setTimeout(() => {
+        clearColor();
+      }, 300);
+    }
+  }
+})
+
+function check() { //Checks if the playerOrder is correct, comparing to the array order[];
+  if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
+    good = false;
+
+  if (playerOrder.length == 20 && good) { //The player must complete 20 rounds to win
+    winGame();
+  }
+
+  if (good == false) {
+    flashColor();
+    turnCounter.innerHTML = "NO!";
+    setTimeout(() => {
+      turnCounter.innerHTML = turn; //if player hits the wrong color, the turncounter goes back to showin
+                                    //which turn the player is at and shows the order again
+      clearColor();
+
+      if (strict) { //If strict is enabled, the player loses if he hits the wrong color
+        play();
+      } else {
+        compTurn = true;
+        flash = 0;
+        playerOrder = [];
+        good = true;
+        intervalId = setInterval(gameTurn, 800);
+      }
+    }, 800);
+
+    noise = false;
+  }
+
+  if (turn == playerOrder.length && good && !win) {
+    turn++;
+    playerOrder = [];
+    compTurn = true;
+    flash = 0;
+    turnCounter.innerHTML = turn;
+    intervalId = setInterval(gameTurn, 800);
+  }
+
+}
+
+function winGame() {
+  flashColor();
+  turnCounter.innerHTML = "WIN!";
+  on = false;
+  win = true;
+}
 
 
 
